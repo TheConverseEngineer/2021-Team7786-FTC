@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.tests;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.TelemetryPacket;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -11,6 +12,7 @@ import org.firstinspires.ftc.teamcode.trajectory.Parametric;
  *  It also calculates spline length
  * @author TheConverseEngineer
  */
+@Disabled
 @TeleOp(name="Parametric Test", group="Tests")
 public class ParametricTest extends OpMode {
 
@@ -19,7 +21,7 @@ public class ParametricTest extends OpMode {
 
     @Override
     public void init() {
-        parametric = new Parametric(-50d, -50d, 0d, 50d, 50d, 50d, 0d, 50d);
+        parametric = new Parametric(50d, -50d, Math.PI / 2, 100d, 0d, 0d, Math.PI / 2, 100d);
         dashboard = FtcDashboard.getInstance();
     }
 
@@ -29,7 +31,7 @@ public class ParametricTest extends OpMode {
         packet.fieldOverlay()
                 .setStrokeWidth(1)
                 .setStroke("goldenrod")
-                .strokePolyline(parametric.approxXLine(7), parametric.approxYLine(7));
+                .strokePolyline(parametric.approxXLine(35), parametric.approxYLine(35));
         dashboard.sendTelemetryPacket(packet);
         telemetry.addData("Spline Length", parametric.approxLength());
     }

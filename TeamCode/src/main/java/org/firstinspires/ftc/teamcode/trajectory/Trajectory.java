@@ -130,7 +130,7 @@ public class Trajectory {
                 b_profile = profileFactory.generateSteadyProfile(b_distance);
             }
 
-            return new Trajectory((Path[]) b_paths.toArray(), b_profile, (Marker[]) b_markers.toArray());
+            return new Trajectory(b_paths.toArray(new Path[0]), b_profile, b_markers.toArray(new Marker[0]));
         }
 
         private void updateLastPose(double lX, double lY, double lH) {

@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode.kinematics;
 
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
 import org.firstinspires.ftc.teamcode.drive.MotorDeltaReport;
 import org.firstinspires.ftc.teamcode.utils.Pose2D;
@@ -30,7 +30,7 @@ public class MecanumKinematics {
 
     public ChassisCommand fromGamepad(double x, double y, double w) {
         Vector2D translation = new Vector2D(x, y).scaleExp(GAMEPAD_DRIVE_SMOOTHER).scale(MAX_DRIVE_SPEED);
-        return toWheelSpeeds(new Pose2D(translation, MAX_TURN_SPEED * Math.pow(w, GAMEPAD_TURN_SMOOTHER)));
+        return toWheelSpeeds(new Pose2D(translation, MAX_TURN_SPEED * w));
     }
 
     public Pose2D localToGlobalMovement(double heading, Vector2D translation, double dHeading) {

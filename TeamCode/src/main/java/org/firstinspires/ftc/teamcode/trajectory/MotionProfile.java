@@ -87,7 +87,7 @@ public class MotionProfile {
         }
 
         public MotionProfile build() {
-            return new MotionProfile((ProfileFunction[]) funcs.toArray(), (Double[]) stops.toArray());
+            return new MotionProfile(funcs.toArray(funcs.toArray(new ProfileFunction[0])), stops.toArray(stops.toArray(new Double[0])));
         }
     }
 }

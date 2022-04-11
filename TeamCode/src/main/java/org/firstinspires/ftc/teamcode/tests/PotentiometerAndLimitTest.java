@@ -1,13 +1,15 @@
 package org.firstinspires.ftc.teamcode.tests;
 
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.hardware.LimitSwitch;
 import org.firstinspires.ftc.teamcode.hardware.Potentiometer;
 
+@Disabled
 @TeleOp(name="Potentiometer/Limit Test", group = "Tests")
 public class PotentiometerAndLimitTest extends OpMode {
 

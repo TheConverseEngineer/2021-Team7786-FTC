@@ -6,7 +6,7 @@ package org.firstinspires.ftc.teamcode.kinematics;
 public class ChassisCommand {
 
     // Order is lf, rf, lr, rr
-    public double[] speeds;
+    public double[] speeds = new double[4];
 
     public ChassisCommand(double lf,double rf,double lr,double rr) {
         this.speeds[0] = lf;

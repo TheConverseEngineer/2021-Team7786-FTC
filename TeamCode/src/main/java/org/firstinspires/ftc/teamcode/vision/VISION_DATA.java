@@ -28,13 +28,9 @@ public class VISION_DATA {
     public static final int RIGHT_BOX_Y2 = 175;
 
     public static final int CAMERA_WIDTH = 640;
-    public static final int CAMERA_HEIGHT = 360;
+    public static final int CAMERA_HEIGHT = 480;
     public static final int TOP_MARGIN = 0;
     public static final int LEFT_MARGIN = 0;
     public static final int RIGHT_MARGIN = 0;
     public static final int BOTTOM_MARGIN = 0;
-
-
-
-
 }

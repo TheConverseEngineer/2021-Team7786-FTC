@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.tests;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
@@ -8,8 +9,9 @@ import org.firstinspires.ftc.teamcode.drive.MecanumDrive;
 import org.firstinspires.ftc.teamcode.kinematics.MecanumKinematics;
 import org.firstinspires.ftc.teamcode.utils.Pose2D;
 
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
+@Disabled
 @TeleOp(name="Drive Test", group="Tests")
 public class DriveTest extends OpMode
 {
@@ -31,8 +33,17 @@ public class DriveTest extends OpMode
     }
 
     @Override
+    public void start() {
+        drive.start();
+    }
+
+    @Override
     public void loop() {
         // Drive!!!
+        drive.update();
         drive.driveWithGamepad(gamepad1.left_stick_x, gamepad1.left_stick_y, gamepad1.right_stick_x);
+        telemetry.addData("x", drive.x());
+        telemetry.addData("y", drive.y());
+        telemetry.addData("theta", drive.theta());
     }
 }

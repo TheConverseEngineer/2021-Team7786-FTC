@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.tests;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -9,6 +10,7 @@ import org.firstinspires.ftc.teamcode.hardware.DriveMotor;
 /** Tests the velocity PID and rotation reporting of the drive motor class.
  * @author TheConverseEngineer
  */
+@Disabled
 @TeleOp(name = "Drive Motor Test", group = "Tests")
 public class DriveMotorTest extends OpMode {
 

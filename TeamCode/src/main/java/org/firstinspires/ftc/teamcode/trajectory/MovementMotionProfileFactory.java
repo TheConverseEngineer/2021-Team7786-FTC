@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory;
 
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
 public class MovementMotionProfileFactory extends MotionProfileFactory{
 

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.core;
+package org.firstinspires.ftc.teamcode.tests;
 
 import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -24,16 +24,16 @@ public class ROBOT_DATA {
     public static double GAMEPAD_TURN_SMOOTHER = 2;
 
     //Config variables
-    public static double HALF_TRACK_WIDTH = 6;
-    public static double HALF_WHEEL_BASE = 6;
+    public static double HALF_TRACK_WIDTH = 4.75;
+    public static double HALF_WHEEL_BASE = 5.5;
 
-    public static final double TICKS_PER_REV = 328;
+    public static final double TICKS_PER_REV = 384.5;
 
     public static final double WHEEL_CIRCUMFERENCE = Math.PI * 3.85826772;
 
     //Config variables
-    public static double MAX_DRIVE_SPEED = 80; // Put this in inches per sec
-    public static double MAX_TURN_SPEED = 6.28318531; // Put this in radians per sec
+    public static double MAX_DRIVE_SPEED = 10; // Put this in inches per sec
+    public static double MAX_TURN_SPEED = 1; // Put this in radians per sec
 
     //Config variables (the two P-gains only)
     public static double SHOULDER_P_GAIN = 1;

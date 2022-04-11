@@ -1,10 +1,12 @@
 package org.firstinspires.ftc.teamcode.tests;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.controllers.gamepad.GamepadEx;
 
+@Disabled
 @TeleOp(name = "GamepadEx Test", group = "Tests")
 public class GamepadExTest extends OpMode {
     private GamepadEx gamepadEx;

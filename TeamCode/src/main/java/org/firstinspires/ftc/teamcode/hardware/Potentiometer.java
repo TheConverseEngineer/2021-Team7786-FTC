@@ -1,7 +1,5 @@
 package org.firstinspires.ftc.teamcode.hardware;
 
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
-
 import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 

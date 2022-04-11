@@ -6,7 +6,7 @@ import org.firstinspires.ftc.teamcode.hardware.DriveMotor;
 import org.firstinspires.ftc.teamcode.hardware.IMU;
 import org.firstinspires.ftc.teamcode.kinematics.MecanumKinematics;
 import org.firstinspires.ftc.teamcode.utils.Pose2D;
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
 public class MecanumDrive extends FourWheelDrive {
 

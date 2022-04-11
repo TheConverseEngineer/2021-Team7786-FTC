@@ -1,10 +1,11 @@
 package org.firstinspires.ftc.teamcode.drive;
 
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.hardware.DriveMotor;
 import org.firstinspires.ftc.teamcode.trajectory.Trajectory;
 import org.firstinspires.ftc.teamcode.trajectory.TrajectoryState;
@@ -32,7 +33,7 @@ public class RamseteFollower extends MecanumDrive{
                               targetRotVelo + k*error.theta + RAMSETE_B*sinc(error.theta)*error.y);
     }
 
-    public void executeTrajectory(Trajectory traj) {
+    public void executeTrajectory(Trajectory traj, Telemetry telemetry) {
         ElapsedTime timer = new ElapsedTime();
         ArrayList<Marker> markers = traj.getMarkerArray();
 
@@ -40,7 +41,12 @@ public class RamseteFollower extends MecanumDrive{
         // Execute trajectory
         while (timer.seconds() <= totalTime) {
             TrajectoryState state = traj.get(timer.seconds());
-            followPath(state.target, state.velocity, state.rotationalVelocity);
+            telemetry.addData("target:", state.target.x + " " + state.target.y + " " + state.target.theta);
+            telemetry.addData("velocity", state.velocity);
+            telemetry.addData("rotVelo", state.rotationalVelocity);
+            telemetry.addData("totalTime", totalTime);
+            telemetry.addData("time past", timer.seconds());
+            //followPath(state.target, state.velocity, state.rotationalVelocity);
             for (Marker i : markers) {
                 if (i.getTimeStamp() <= timer.seconds()) {
                     i.run();

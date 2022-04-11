@@ -25,7 +25,7 @@ public class Parametric {
      */
     public Parametric(double x0, double y0, double h0, double weight0, double x1, double y1, double h1, double weight1) {
         this(Cubic.cubicFromSpecs(x0, Math.cos(h0) * weight0, x1, Math.cos(h1) * weight1),
-             Cubic.cubicFromSpecs(y0, Math.sin(h0) * weight0, y1, Math.sin(h1) * weight1));
+             Cubic.cubicFromSpecs(-y0, Math.sin(h0) * weight0, -y1, Math.sin(h1) * weight1));
     }
 
     public Vector2D getPoint(double t) {
@@ -60,7 +60,7 @@ public class Parametric {
         for (int i = 0; i < parts; i++) {
             ret[i] = xCubic.getPoint(stepLen * i);
         }
-        ret[parts + 1] = xCubic.getPoint(1);
+        ret[parts] = xCubic.getPoint(1);
         return ret;
     }
 
@@ -74,7 +74,7 @@ public class Parametric {
         for (int i = 0; i < parts; i++) {
             ret[i] = yCubic.getPoint(stepLen * i);
         }
-        ret[parts + 1] = yCubic.getPoint(1);
+        ret[parts] = yCubic.getPoint(1);
         return ret;
     }
 }

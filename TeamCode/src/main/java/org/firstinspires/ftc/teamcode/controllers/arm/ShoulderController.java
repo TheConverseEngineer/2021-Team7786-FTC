@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.controllers.arm;
 
 import org.firstinspires.ftc.teamcode.hardware.Potentiometer;
-import static org.firstinspires.ftc.teamcode.core.ROBOT_DATA.*;
+import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 

@@ -33,4 +33,8 @@ public class IMU {
         offset -= heading + getHeading();
         lastRead = heading;
     }
+
+    public BNO055IMU getImu() {
+        return imu;
+    }
 }

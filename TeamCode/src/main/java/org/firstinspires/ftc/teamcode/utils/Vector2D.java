@@ -23,8 +23,8 @@ public class Vector2D {
     }
 
     public Vector2D scaleExp(double exp) {
-        x = Math.pow(x, exp);
-        y = Math.pow(y, exp);
+        x = Math.pow(x, exp - 1) * Math.abs(x);
+        y = Math.pow(y, exp - 1) * Math.abs(y);
         return this;
     }
 
