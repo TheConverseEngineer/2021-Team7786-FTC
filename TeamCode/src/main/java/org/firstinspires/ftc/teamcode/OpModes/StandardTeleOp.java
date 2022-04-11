@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.OpModes;
 
+import static org.firstinspires.ftc.teamcode.core.CONSTANTS.shoulderK;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -36,7 +38,7 @@ public class StandardTeleOp extends OpMode {
         duck = hardwareMap.get(DcMotor.class, "duckMotor");
         intake = hardwareMap.get(CRServo.class, "intake");
 
-        sensor = new Potentiometer(hardwareMap, "sensor");
+        sensor = new Potentiometer(hardwareMap, "shoulderSensor");
 
         desiredPos = 0;
 
@@ -67,7 +69,7 @@ public class StandardTeleOp extends OpMode {
         sensor.update();
 
         telemetry.addData("Sensor pos", sensor.getAngleDegrees());
-        shoulder.setPower(-(desiredPos - sensor.getAngleDegrees()));
+        shoulder.setPower(shoulder.setPower(2 / (1 + Math.pow(Math.E, shoulderK * (desiredPos) - sensor.getAngleDegrees()) - 1));
 
         // Move
         controller.drive(-gamepad1.left_stick_x, gamepad1.left_stick_y, -gamepad1.right_stick_x, gamepad1.right_bumper);
