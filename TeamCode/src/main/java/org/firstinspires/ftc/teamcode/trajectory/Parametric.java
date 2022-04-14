@@ -32,7 +32,7 @@ public class Parametric {
         return new Vector2D(xCubic.getPoint(t), yCubic.getPoint(t));
     }
 
-    public double getDeriv(double t) {
+    public double getDerivative(double t) {
         return Math.atan2(yCubic.getDerivative(t), xCubic.getDerivative(t));
     }
 
