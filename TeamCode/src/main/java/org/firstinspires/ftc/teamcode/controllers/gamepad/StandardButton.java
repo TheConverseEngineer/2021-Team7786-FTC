@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.controllers.gamepad;
 
+
 public abstract class StandardButton extends Input {
 
     /** Abstract method which runs every loop

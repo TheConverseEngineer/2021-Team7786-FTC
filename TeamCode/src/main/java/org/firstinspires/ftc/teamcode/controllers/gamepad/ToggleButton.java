@@ -1,6 +1,8 @@
 package org.firstinspires.ftc.teamcode.controllers.gamepad;
 
+
 public abstract class ToggleButton extends Input {
+
     private boolean lastValue = false;
     private boolean toggledValue = false;
 
@@ -19,6 +21,7 @@ public abstract class ToggleButton extends Input {
         boolean currentState = detect();
         if (currentState != lastValue) {
             lastValue = currentState;
+            
             if (currentState) {
                 toggledValue = !toggledValue;
                 onToggle(toggledValue);
