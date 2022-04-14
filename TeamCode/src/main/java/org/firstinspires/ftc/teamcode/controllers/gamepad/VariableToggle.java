@@ -1,6 +1,8 @@
 package org.firstinspires.ftc.teamcode.controllers.gamepad;
 
+
 public abstract class VariableToggle extends Input{
+
     private boolean lastState = false;
     private boolean toggleState = false;
     private static final float PRESS_THRESHOLD = 0.85f;
@@ -20,6 +22,7 @@ public abstract class VariableToggle extends Input{
         boolean currentState = detect() > PRESS_THRESHOLD;
         if (currentState != lastState) {
             lastState = currentState;
+
             if (currentState) {
                 toggleState = !toggleState;
                 onToggle(toggleState);
