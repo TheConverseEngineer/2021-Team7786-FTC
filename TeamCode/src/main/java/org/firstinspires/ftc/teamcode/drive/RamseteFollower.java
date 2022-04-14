@@ -15,6 +15,7 @@ import org.firstinspires.ftc.teamcode.utils.Pose2D;
 
 import java.util.ArrayList;
 
+
 public class RamseteFollower extends MecanumDrive{
 
     public RamseteFollower(HardwareMap hwMap, Pose2D pose, DriveMotor leftFrontDrive, DriveMotor rightFrontDrive, DriveMotor leftRearDrive, DriveMotor rightRearDrive) {
