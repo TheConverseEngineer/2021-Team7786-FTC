@@ -30,15 +30,15 @@ public class Trajectory {
     public TrajectoryState get(double t) {
         TrajectoryState state = new TrajectoryState();
         state.velocity = profile.getVelocity(t);
-        double disp = profile.getPosition(t);
-        double currentDisp = 0;
+        double displacement = profile.getPosition(t);
+        double currentDisplacement = 0;
         for (Path p : paths) {
-            if (p.length >= disp - currentDisp) {
-                state.target = p.getPoint(disp - currentDisp);
-                state.rotationalVelocity = p.getHeadingVelocity(disp - currentDisp);
+            if (p.length >= displacement - currentDisplacement) {
+                state.target = p.getPoint(displacement - currentDisplacement);
+                state.rotationalVelocity = p.getHeadingVelocity(displacement - currentDisplacement);
                 return state;
             } else {
-                currentDisp += paths.length;
+                currentDisplacement += paths.length;
             }
         }
         //Default to end position
