@@ -50,44 +50,44 @@ public class MotionProfile {
 
     public static class Builder {
 
-        private ArrayList<ProfileFunction> funcs = new ArrayList<ProfileFunction>();
+        private ArrayList<ProfileFunction> functions = new ArrayList<ProfileFunction>();
         private ArrayList<Double> stops = new ArrayList<Double>();
         private Double totalTime = 0d;
         private double currentPos = 0d;
 
         public Builder() {
-            funcs.clear();
+            functions.clear();
             stops.clear();
             totalTime = 0d;
             currentPos = 0d;
         }
 
         public Builder addAccelPhase(double accelTime, double maxVelo, double start) {
-            funcs.add(new AccelQuartic(accelTime, maxVelo, start, currentPos));
+            functions.add(new AccelQuartic(accelTime, maxVelo, start, currentPos));
             totalTime += accelTime;
-            currentPos += funcs.get(funcs.size() - 1).getPosition(accelTime);
+            currentPos += functions.get(functions.size() - 1).getPosition(accelTime);
             stops.add(totalTime);
             return this;
         }
 
-        public Builder addDeaccelPhase(double accelTime, double maxVelo, double end) {
-            funcs.add(new DeccelQuartic(accelTime, maxVelo, end, currentPos));
+        public Builder addDeccelPhase(double accelTime, double maxVelo, double end) {
+            functions.add(new DeccelQuartic(accelTime, maxVelo, end, currentPos));
             totalTime += accelTime;
             stops.add(totalTime);
-            currentPos += funcs.get(funcs.size() - 1).getPosition(accelTime);
+            currentPos += functions.get(functions.size() - 1).getPosition(accelTime);
             return this;
         }
 
         public Builder addSteadyPhase(double speed, double time) {
-            funcs.add(new Horizontal(speed, currentPos));
+            functions.add(new Horizontal(speed, currentPos));
             totalTime += time;
             stops.add(time);
-            currentPos += funcs.get(funcs.size() - 1).getPosition(time);
+            currentPos += functions.get(functions.size() - 1).getPosition(time);
             return this;
         }
 
         public MotionProfile build() {
-            return new MotionProfile(funcs.toArray(funcs.toArray(new ProfileFunction[0])), stops.toArray(stops.toArray(new Double[0])));
+            return new MotionProfile(functions.toArray(functions.toArray(new ProfileFunction[0])), stops.toArray(stops.toArray(new Double[0])));
         }
     }
 }
