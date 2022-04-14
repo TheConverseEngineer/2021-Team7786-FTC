@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
 
 public class Horizontal implements ProfileFunction {
-    
+
     private final double velocity;
     private final double startPos;
 
