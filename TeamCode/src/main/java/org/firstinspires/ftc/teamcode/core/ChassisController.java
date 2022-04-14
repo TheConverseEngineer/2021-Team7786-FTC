@@ -9,7 +9,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+
 public class ChassisController implements HardwareElement{
+
     private static final ChassisController instance = new ChassisController();
 
     private double speed, slowMultiplier, slowTurnMultiplier;
@@ -61,6 +63,7 @@ public class ChassisController implements HardwareElement{
         lr.setPower(.25);
         rr.setPower(0);
     }
+
     public void turn2() {
         lf.setPower(-.25);
         rf.setPower(.25);
