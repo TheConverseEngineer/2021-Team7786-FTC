@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.utils;
 
+
 public class MathFunctions {
 
     /** Raises a to the b power while keeping the sign and preventing domain errors.
