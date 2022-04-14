@@ -44,6 +44,7 @@ public class Potentiometer {
         return this.currentValue;
     }
 
+    //TODO: this does not need to call another method
     public double getAngleRadians() {
         return Math.toRadians(getAngleDegrees());
     }

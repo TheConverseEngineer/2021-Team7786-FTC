@@ -5,32 +5,32 @@ package org.firstinspires.ftc.teamcode.trajectory.Functions;
  */
 public class AccelQuartic implements ProfileFunction {
 
-    private final double scalarCoeff;
-    private final double veloFirstCo;
+    private final double scalarCoefficient;
+    private final double velocityFirstCo;
     private final double posFirstCo;
-    private final double veloSecondCo;
+    private final double velocitySecondCo;
     private final double posSecondCo;
-    private final double veloK;
+    private final double velocityK;
     private final double posK;
 
-    public AccelQuartic(double accelTime, double maxVelo, double startVelo, double startPos) {
-        this.scalarCoeff = maxVelo/0.0833;
-        this.veloFirstCo = -1/(6*cube(accelTime));
-        this.posFirstCo = this.veloFirstCo / 4;
-        this.veloSecondCo = 1 / (4*square(accelTime));
-        this.posSecondCo = this.veloSecondCo / 3;
-        this.veloK = startVelo;
+    public AccelQuartic(double accelTime, double maxVelocity, double startVelocity, double startPos) {
+        this.scalarCoefficient = maxVelocity/0.0833;
+        this.velocityFirstCo = -1/(6*cube(accelTime));
+        this.posFirstCo = this.velocityFirstCo / 4;
+        this.velocitySecondCo = 1 / (4*square(accelTime));
+        this.posSecondCo = this.velocitySecondCo / 3;
+        this.velocityK = startVelocity;
         this.posK = startPos;
     }
 
     @Override
     public double getVelocity(double t) {
-        return scalarCoeff*((veloFirstCo * cube(t)) + (veloSecondCo * square(t))) + veloK;
+        return scalarCoefficient *((velocityFirstCo * cube(t)) + (velocitySecondCo * square(t))) + velocityK;
     }
 
     @Override
     public double getPosition(double t) {
-        return scalarCoeff*((posFirstCo * fourth(t)) + (posSecondCo * cube(t))) + veloK*t + posK;
+        return scalarCoefficient *((posFirstCo * fourth(t)) + (posSecondCo * cube(t))) + velocityK *t + posK;
     }
 
     private double fourth(double x) { return Math.pow(x, 4); }
