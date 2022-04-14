@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
+
 /** Link to function: https://www.desmos.com/calculator/zlyb8ugqjm
  * @author TheConverseEngineer
  */
