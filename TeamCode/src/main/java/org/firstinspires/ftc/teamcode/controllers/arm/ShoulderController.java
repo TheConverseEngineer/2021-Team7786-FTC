@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class ShoulderController {
 
     private double targetPos;
-    private double currentVelo;
+    private double currentVelocity;
     private Potentiometer potentiometer;
     private DcMotor motor;
 
