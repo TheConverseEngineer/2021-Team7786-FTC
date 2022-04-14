@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.trajectory;
 
 import org.firstinspires.ftc.teamcode.trajectory.Functions.AccelQuartic;
-import org.firstinspires.ftc.teamcode.trajectory.Functions.DeaccelQuartic;
+import org.firstinspires.ftc.teamcode.trajectory.Functions.DeccelQuartic;
 import org.firstinspires.ftc.teamcode.trajectory.Functions.Horizontal;
 import org.firstinspires.ftc.teamcode.trajectory.Functions.ProfileFunction;
 
@@ -71,7 +71,7 @@ public class MotionProfile {
         }
 
         public Builder addDeaccelPhase(double accelTime, double maxVelo, double end) {
-            funcs.add(new DeaccelQuartic(accelTime, maxVelo, end, currentPos));
+            funcs.add(new DeccelQuartic(accelTime, maxVelo, end, currentPos));
             totalTime += accelTime;
             stops.add(totalTime);
             currentPos += funcs.get(funcs.size() - 1).getPosition(accelTime);
