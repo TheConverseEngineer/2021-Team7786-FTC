@@ -9,7 +9,7 @@ import java.util.HashMap;
  *  Refer to the example op-mode in the tests folder for a demonstration
  */
 public class GamepadEx {
-    
+
     private Gamepad gamepad;
     private HashMap<String, Input> inputs;
 
