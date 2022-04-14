@@ -7,6 +7,7 @@ import org.firstinspires.ftc.teamcode.trajectory.Functions.ProfileFunction;
 
 import java.util.ArrayList;
 
+
 public class MotionProfile {
 
     ProfileFunction[] phases;
@@ -19,7 +20,9 @@ public class MotionProfile {
 
     public double getVelocity(double t) {
         for (int i = 0; i < endTimes.length; i++) {
+
             if (t < endTimes[i]) {
+
                 if (i == 0) {
                     return phases[i].getVelocity(t);
                 } else {
@@ -32,7 +35,9 @@ public class MotionProfile {
 
     public double getPosition(double t) {
         for (int i = 0; i < endTimes.length; i++) {
+
             if (t < endTimes[i]) {
+
                 if (i == 0) {
                     return phases[i].getPosition(t);
                 } else {
