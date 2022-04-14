@@ -22,7 +22,8 @@ public class ShoulderController {
         if (angle < SHOULDER_MIN_ANGLE_DEGREES) {
             motor.setPower(1);
             return;
-        } else if (angle >= SHOULDER_MAX_ANGLE_DEGREES) {
+        }
+        else if (angle >= SHOULDER_MAX_ANGLE_DEGREES) {
             motor.setPower(-1);
             return;
         }
