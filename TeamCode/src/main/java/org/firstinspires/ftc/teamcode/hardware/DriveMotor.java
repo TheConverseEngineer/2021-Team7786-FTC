@@ -26,7 +26,7 @@ public class DriveMotor {
     public DcMotorEx getMotor() {
         return motor;
     }
-    
+
     public void setPower(double power) {
         this.motor.setPower(power);
     }
