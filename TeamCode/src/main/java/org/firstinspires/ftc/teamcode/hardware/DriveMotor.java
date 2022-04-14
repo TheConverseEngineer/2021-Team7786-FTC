@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
+
 public class DriveMotor {
 
     private DcMotorEx motor;
@@ -25,6 +26,7 @@ public class DriveMotor {
     public DcMotorEx getMotor() {
         return motor;
     }
+    
     public void setPower(double power) {
         this.motor.setPower(power);
     }
