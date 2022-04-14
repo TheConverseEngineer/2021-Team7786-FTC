@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
+
 /** Serves as a function for motion planning
  * @author TheConverseEngineer
  */
