@@ -3,7 +3,9 @@ package org.firstinspires.ftc.teamcode.trajectory;
 import org.firstinspires.ftc.teamcode.trajectory.Functions.Cubic;
 import org.firstinspires.ftc.teamcode.utils.Vector2D;
 
+
 public class Parametric {
+
     private Cubic xCubic, yCubic;
 
     /** This function creates a parametric curve from two Cubic polynomials
