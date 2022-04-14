@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
+
 public class DeccelQuartic implements ProfileFunction{
 
     private final double scalarCoefficient;
