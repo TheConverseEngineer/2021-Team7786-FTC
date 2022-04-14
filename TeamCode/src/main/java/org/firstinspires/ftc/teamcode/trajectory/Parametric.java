@@ -33,7 +33,7 @@ public class Parametric {
     }
 
     public double getDeriv(double t) {
-        return Math.atan2(yCubic.getDeriv(t), xCubic.getDeriv(t));
+        return Math.atan2(yCubic.getDerivative(t), xCubic.getDerivative(t));
     }
 
     /** Approximates the length of the spline in inches.
@@ -45,7 +45,7 @@ public class Parametric {
     public double approxLength () {
         double integrand = 0;
         for (double i = 0; i < 1; i+=0.01) {
-            integrand += 0.001 * Math.sqrt(Math.pow(xCubic.getDeriv(i+0.005), 2) + Math.pow(yCubic.getDeriv(i+0.005), 2));
+            integrand += 0.001 * Math.sqrt(Math.pow(xCubic.getDerivative(i+0.005), 2) + Math.pow(yCubic.getDerivative(i+0.005), 2));
         }
         return integrand;
     }
