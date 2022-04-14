@@ -5,6 +5,7 @@ import org.firstinspires.ftc.teamcode.trajectory.markers.Marker;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 public class Trajectory {
 
     private static final MovementMotionProfileFactory profileFactory = MovementMotionProfileFactory.getInstance();
