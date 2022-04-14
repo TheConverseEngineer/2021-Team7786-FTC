@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory;
 
+
 /** Generates an S-curve motion profile
  * @author TheConverseEngineer
  */
