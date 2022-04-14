@@ -21,7 +21,7 @@ public abstract class ToggleButton extends Input {
         boolean currentState = detect();
         if (currentState != lastValue) {
             lastValue = currentState;
-            
+
             if (currentState) {
                 toggledValue = !toggledValue;
                 onToggle(toggledValue);
