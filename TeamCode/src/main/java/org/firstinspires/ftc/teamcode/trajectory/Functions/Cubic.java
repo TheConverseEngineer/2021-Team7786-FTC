@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
+
 public class Cubic implements Function{
 
     private double a, b, c, d;
