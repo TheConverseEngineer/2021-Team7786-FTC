@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory;
 
 import org.firstinspires.ftc.teamcode.trajectory.markers.Marker;
-import org.firstinspires.ftc.teamcode.utils.Pose2D;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -125,7 +124,7 @@ public class Trajectory {
             } else if (start) {
                 b_profile = profileFactory.generateAccelOnlyProfile(b_distance);
             } else if (end) {
-                b_profile = profileFactory.generateDeaccelOnlyProfile(b_distance);
+                b_profile = profileFactory.generateDeccelOnlyProfile(b_distance);
             } else {
                 b_profile = profileFactory.generateSteadyProfile(b_distance);
             }

@@ -26,10 +26,10 @@ public abstract class MotionProfileFactory {
                     .build();
         } else {  // Degenerate trajectory
             double newAccelTime = (distance*ACCEL_TIME) / (2*ACCEL_DISTANCE);
-            double newMaxVelo = (distance * 0.996) / newAccelTime;
+            double newMaxVelocity = (distance * 0.996) / newAccelTime;
             profile = new MotionProfile.Builder()
-                    .addAccelPhase(newAccelTime, newMaxVelo, 0)
-                    .addDeccelPhase(newAccelTime, newMaxVelo, 0)
+                    .addAccelPhase(newAccelTime, newMaxVelocity, 0)
+                    .addDeccelPhase(newAccelTime, newMaxVelocity, 0)
                     .build();
         }
         return profile;
@@ -50,7 +50,7 @@ public abstract class MotionProfileFactory {
         return profile;
     }
 
-    public MotionProfile generateDeaccelOnlyProfile(double distance) {
+    public MotionProfile generateDeccelOnlyProfile(double distance) {
         MotionProfile profile;
         if (distance > this.ACCEL_DISTANCE) { // Standard Trajectory
             profile = new MotionProfile.Builder()
