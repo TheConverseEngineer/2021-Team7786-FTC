@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.trajectory;
 
 import org.firstinspires.ftc.teamcode.utils.Pose2D;
 
+
 /** This class serves to refactor a parametric with an actual length
  * @author TheConverseEngineer
  */
