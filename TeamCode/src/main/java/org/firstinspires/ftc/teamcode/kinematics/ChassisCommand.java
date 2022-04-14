@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.kinematics;
 
+
 /** Data class storing the wheel speeds for the left-front, right-front, left-rear, and right-rear motors
  * @author TheConverseEngineer
  */
