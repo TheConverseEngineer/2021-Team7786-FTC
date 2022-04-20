@@ -3,7 +3,9 @@ package org.firstinspires.ftc.teamcode.trajectory;
 import org.firstinspires.ftc.teamcode.trajectory.Functions.Cubic;
 import org.firstinspires.ftc.teamcode.utils.Vector2D;
 
+
 public class Parametric {
+
     private Cubic xCubic, yCubic;
 
     /** This function creates a parametric curve from two Cubic polynomials
@@ -32,8 +34,8 @@ public class Parametric {
         return new Vector2D(xCubic.getPoint(t), yCubic.getPoint(t));
     }
 
-    public double getDeriv(double t) {
-        return Math.atan2(yCubic.getDeriv(t), xCubic.getDeriv(t));
+    public double getDerivative(double t) {
+        return Math.atan2(yCubic.getDerivative(t), xCubic.getDerivative(t));
     }
 
     /** Approximates the length of the spline in inches.
@@ -45,7 +47,7 @@ public class Parametric {
     public double approxLength () {
         double integrand = 0;
         for (double i = 0; i < 1; i+=0.01) {
-            integrand += 0.001 * Math.sqrt(Math.pow(xCubic.getDeriv(i+0.005), 2) + Math.pow(yCubic.getDeriv(i+0.005), 2));
+            integrand += 0.001 * Math.sqrt(Math.pow(xCubic.getDerivative(i+0.005), 2) + Math.pow(yCubic.getDerivative(i+0.005), 2));
         }
         return integrand;
     }

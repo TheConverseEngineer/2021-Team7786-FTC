@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.trajectory;
 
 import org.firstinspires.ftc.teamcode.utils.Pose2D;
 
+
 /** This class serves to refactor a parametric with an actual length
  * @author TheConverseEngineer
  */
@@ -36,11 +37,11 @@ public class Path {
     }
 
     public Pose2D getPoint(double displacement) {
-        return new Pose2D(parametric.getPoint(displacement / this.length), parametric.getDeriv(displacement / this.length));
+        return new Pose2D(parametric.getPoint(displacement / this.length), parametric.getDerivative(displacement / this.length));
     }
 
     public double getHeadingVelocity(double displacement) {
-        return (parametric.getDeriv(displacement / this.length) - parametric.getDeriv(displacement / this.length + 0.0001)) / -0.0001;
+        return (parametric.getDerivative(displacement / this.length) - parametric.getDerivative(displacement / this.length + 0.0001)) / -0.0001;
     }
 
 }

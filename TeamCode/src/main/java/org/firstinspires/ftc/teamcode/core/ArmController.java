@@ -12,7 +12,9 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.utils.MathFunctions;
 
+
 public class ArmController implements HardwareElement{
+
     private DcMotorEx elbow;
     private DcMotor shoulder;
     private AnalogInput potentiometer;
@@ -46,8 +48,9 @@ public class ArmController implements HardwareElement{
 
     public void update() {
         updateShoulderPos();
-        if (shoulderPos >= 265) { shoulder.setPower(-1); }
-        else if (shoulderPos <= 5) {shoulder.setPower(1);}
+        if (shoulderPos >= 265) {
+            shoulder.setPower(-1);
+        } else if (shoulderPos <= 5) {shoulder.setPower(1);}
 
         if (snapActive) {
             shoulder.setPower(2 / (1 + Math.pow(Math.E, shoulderK * (target.position) - shoulderPos)) - 1);
@@ -59,8 +62,9 @@ public class ArmController implements HardwareElement{
 
     private void updateShoulderPos() {
         double voltage = potentiometer.getVoltage();
-        if (MathFunctions.epsEquals(voltage, 0)) {shoulderPos = 270d;}
-        else {
+        if (MathFunctions.epsEquals(voltage, 0)) {
+            shoulderPos = 270d;
+        } else {
             double output = (-234*( Math.sqrt(Math.pow(voltage, 2)-(1.1*voltage)+0.908) - (0.577*(voltage+1.65)))) / voltage;
             shoulderPos = MathFunctions.clamp(output, 270, 0);
         }

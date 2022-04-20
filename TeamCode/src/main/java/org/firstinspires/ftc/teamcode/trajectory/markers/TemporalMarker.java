@@ -1,6 +1,8 @@
 package org.firstinspires.ftc.teamcode.trajectory.markers;
 
+
 public abstract class TemporalMarker extends Marker{
+
     private double time;
 
     public TemporalMarker(double time) {

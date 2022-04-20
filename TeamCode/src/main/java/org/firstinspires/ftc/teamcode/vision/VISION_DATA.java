@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.vision;
 
 import org.opencv.core.Scalar;
 
+
 public class VISION_DATA {
     // Colors (Probably don't edit these)
     public static final Scalar RGB_WHITE = new Scalar(255.0, 255.0, 255.0);

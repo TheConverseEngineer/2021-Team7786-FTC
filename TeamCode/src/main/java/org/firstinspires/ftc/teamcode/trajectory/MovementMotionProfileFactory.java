@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.trajectory;
 
 import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
+
 public class MovementMotionProfileFactory extends MotionProfileFactory{
 
     private static final MovementMotionProfileFactory instance = new MovementMotionProfileFactory();

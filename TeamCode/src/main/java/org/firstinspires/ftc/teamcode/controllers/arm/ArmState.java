@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.controllers.arm;
 public enum ArmState {
     STALL,
     ACCELERATING,
-    DEACCELERATING,
+    DECELERATING,
     TRAVELING,
     RECOVERY,
     INACTIVE

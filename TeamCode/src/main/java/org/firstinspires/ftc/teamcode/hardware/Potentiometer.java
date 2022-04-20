@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.utils.MathFunctions;
 
+
 // Checked for EE
 public class Potentiometer {
 
@@ -45,6 +46,6 @@ public class Potentiometer {
     }
 
     public double getAngleRadians() {
-        return Math.toRadians(getAngleDegrees());
+        return Math.toRadians(this.currentValue);
     }
 }

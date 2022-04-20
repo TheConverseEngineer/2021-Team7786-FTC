@@ -1,10 +1,7 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
 
-/** Link to function: https://www.desmos.com/calculator/zlyb8ugqjm
- * @author TheConverseEngineer
- */
-public class AccelQuartic implements ProfileFunction {
+public class DeccelQuartic implements ProfileFunction{
 
     private final double scalarCoefficient;
     private final double velocityFirstCo;
@@ -14,14 +11,14 @@ public class AccelQuartic implements ProfileFunction {
     private final double velocityK;
     private final double posK;
 
-    public AccelQuartic(double accelTime, double maxVelocity, double startVelocity, double startPos) {
+    public DeccelQuartic(double accelTime, double maxVelocity, double endVelocity, double startPos) {
         this.scalarCoefficient = maxVelocity/0.0833;
-        this.velocityFirstCo = -1/(6*cube(accelTime));
+        this.velocityFirstCo = 1/(6*cube(accelTime));
         this.posFirstCo = this.velocityFirstCo / 4;
-        this.velocitySecondCo = 1 / (4*square(accelTime));
+        this.velocitySecondCo = -1 / (4*square(accelTime));
         this.posSecondCo = this.velocitySecondCo / 3;
-        this.velocityK = startVelocity;
-        this.posK = startPos;
+        this.velocityK = endVelocity + maxVelocity;
+        this.posK = startPos - 0.499799919968*maxVelocity*accelTime;
     }
 
     @Override

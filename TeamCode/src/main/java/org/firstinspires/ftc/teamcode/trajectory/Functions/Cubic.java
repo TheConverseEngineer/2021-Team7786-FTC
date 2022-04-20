@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
+
 public class Cubic implements Function{
 
     private double a, b, c, d;
@@ -22,7 +23,7 @@ public class Cubic implements Function{
         return (a*x*x*x) + (b*x*x) + (c*x) + d;
     }
 
-    public double getDeriv(double x) {
+    public double getDerivative(double x) {
         return (3*a*x*x) + (2*b*x) + c;
     }
 }

@@ -5,13 +5,11 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import java.util.HashMap;
 
 
-
-
-
 /** This is a simplified version of the GamepadEx class found in FTC-BASE-CODE
  *  Refer to the example op-mode in the tests folder for a demonstration
  */
 public class GamepadEx {
+
     private Gamepad gamepad;
     private HashMap<String, Input> inputs;
 

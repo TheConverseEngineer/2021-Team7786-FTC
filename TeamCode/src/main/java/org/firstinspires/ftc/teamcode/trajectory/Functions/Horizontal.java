@@ -1,22 +1,24 @@
 package org.firstinspires.ftc.teamcode.trajectory.Functions;
 
+
 public class Horizontal implements ProfileFunction {
-    private final double velo;
+
+    private final double velocity;
     private final double startPos;
 
-    public Horizontal(double velo, double startPos) {
-        this.velo = velo;
+    public Horizontal(double velocity, double startPos) {
+        this.velocity = velocity;
         this.startPos = startPos;
     }
 
 
     @Override
     public double getPosition(double t) {
-        return velo*t + startPos;
+        return velocity *t + startPos;
     }
 
     @Override
     public double getVelocity(double t) {
-        return velo;
+        return velocity;
     }
 }

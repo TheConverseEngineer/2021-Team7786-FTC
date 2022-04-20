@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
 
+
 public class DriveMotor {
 
     private DcMotorEx motor;
@@ -25,6 +26,7 @@ public class DriveMotor {
     public DcMotorEx getMotor() {
         return motor;
     }
+
     public void setPower(double power) {
         this.motor.setPower(power);
     }
@@ -40,9 +42,9 @@ public class DriveMotor {
     }
 
     /** Sets the velocity of the motor
-     * @param velo  the velocity in ROTATIONS/SECOND
+     * @param velocity  the velocity in ROTATIONS/SECOND
      */
-    public void setVelocity(double velo) {
-        this.motor.setVelocity(velo * TICKS_PER_REV);
+    public void setVelocity(double velocity) {
+        this.motor.setVelocity(velocity * TICKS_PER_REV);
     }
 }
