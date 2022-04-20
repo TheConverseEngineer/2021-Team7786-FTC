@@ -1,12 +1,11 @@
 package org.firstinspires.ftc.teamcode.vision;
 
 
-//TODO: I don't know enough about whats happening here to fix this but that left should be capitalized
 public enum TSE_POSITION {
 
     RIGHT("Right"),
     MIDDLE("Middle"),
-    LEFT("left"),
+    LEFT("Left"),
     UNKNOWN("No idea");
 
     public String asString;
