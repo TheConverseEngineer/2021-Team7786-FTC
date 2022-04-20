@@ -39,7 +39,7 @@ public class IMU {
     }
 
     public void setHeading(double heading) {
-        Log.i(HARDWARE_TAG, "IMU " + id + " Heading set to " + heading);
+        Log.v(HARDWARE_TAG, "IMU " + id + " Heading set to " + heading);
         offset -= heading + getHeading();
         lastRead = heading;
     }
