@@ -27,7 +27,7 @@ public class DriveMotor {
         this.motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         this.motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lastPos = 0;
-        Log.i(HARDWARE_TAG, "DriveMotor with id " + id + " instantiated");
+        Log.i(HARDWARE_TAG, "DriveMotor " + id + " instantiated");
     }
 
     public DcMotorEx getMotor() {
