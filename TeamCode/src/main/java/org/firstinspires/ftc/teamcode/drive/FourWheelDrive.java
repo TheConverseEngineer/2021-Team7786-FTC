@@ -42,7 +42,7 @@ public class FourWheelDrive {
     }
 
     public void runCommand(ChassisCommand cmd) {
-        Log.i(LogTags.DRIVE_TAG, "Four Wheel Drive command running");
+        Log.v(LogTags.DRIVE_TAG, "Four Wheel Drive command running");
         leftFrontDrive.setVelocity(cmd.getLF());
         rightFrontDrive.setVelocity(cmd.getRF());
         leftRearDrive.setVelocity(cmd.getLR());

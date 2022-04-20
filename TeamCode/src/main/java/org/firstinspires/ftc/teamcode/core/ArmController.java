@@ -5,11 +5,14 @@ import static org.firstinspires.ftc.teamcode.core.CONSTANTS.shoulderK;
 import static org.firstinspires.ftc.teamcode.core.CONSTANTS.shoulderMotorName;
 import static org.firstinspires.ftc.teamcode.core.CONSTANTS.shoulderSensorName;
 
+import android.util.Log;
+
 import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.LogTags;
 import org.firstinspires.ftc.teamcode.utils.MathFunctions;
 
 
@@ -25,25 +28,30 @@ public class ArmController implements HardwareElement{
     private boolean snapActive;
 
     public ArmController() {
+
         snapActive = false;
+        Log.i(LogTags.HARDWARE_TAG, "Arm Controller created");
     }
 
 
     @Override
     public void initiate(HardwareMap hardwareMap) {
+        Log.i(LogTags.HARDWARE_TAG, "Arm Controller being initiated");
         elbow = hardwareMap.get(DcMotorEx.class, elbowMotorName);
         shoulder = hardwareMap.get(DcMotor.class, shoulderMotorName);
         potentiometer = hardwareMap.get(AnalogInput.class, shoulderSensorName);
+        Log.i(LogTags.HARDWARE_TAG, "Arm Controller initiated");
     }
 
-    public void goToPos(ArmPosition positionToGoTo) {
+    public void goToPos(ArmPosition position) {
         snapActive = true;
-        target = positionToGoTo;
+        target = position;
+        Log.v(LogTags.HARDWARE_TAG, "Arm Controller pos set to " + position);
     }
 
     public void stopTravel() {
         snapActive = false;
-        
+        Log.v(LogTags.HARDWARE_TAG, "Arm Controller stopped");
     }
 
     public void update() {
