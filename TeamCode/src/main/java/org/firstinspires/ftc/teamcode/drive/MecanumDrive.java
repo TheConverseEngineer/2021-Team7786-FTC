@@ -2,11 +2,14 @@ package org.firstinspires.ftc.teamcode.drive;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.LogTags;
 import org.firstinspires.ftc.teamcode.hardware.DriveMotor;
 import org.firstinspires.ftc.teamcode.hardware.IMU;
 import org.firstinspires.ftc.teamcode.kinematics.MecanumKinematics;
 import org.firstinspires.ftc.teamcode.utils.Pose2D;
 import static org.firstinspires.ftc.teamcode.tests.ROBOT_DATA.*;
+
+import android.util.Log;
 
 
 public class MecanumDrive extends FourWheelDrive {
@@ -19,9 +22,11 @@ public class MecanumDrive extends FourWheelDrive {
 
     public MecanumDrive(HardwareMap hwMap, Pose2D pose, DriveMotor leftFrontDrive, DriveMotor rightFrontDrive, DriveMotor leftRearDrive, DriveMotor rightRearDrive) {
         super(leftFrontDrive, rightFrontDrive, leftRearDrive, rightRearDrive);
+        Log.i(LogTags.DRIVE_TAG, "Mechanum Drive being instantiated");
         kinematics = MecanumKinematics.getInstance();
         imu = new IMU(hwMap, IMU_ID, pose.theta);
         this.pose = pose;
+        Log.i(LogTags.DRIVE_TAG, "Mechanum Drive instantiated");
     }
 
     public void driveWithGamepad(double x, double y, double w) {
@@ -49,6 +54,7 @@ public class MecanumDrive extends FourWheelDrive {
         this.pose.y = y;
         this.pose.theta = heading;
         getMotorDeltas();
+        Log.v(LogTags.DRIVE_TAG, "Mechanum Drive pose set");
     }
 
     public double x() {
