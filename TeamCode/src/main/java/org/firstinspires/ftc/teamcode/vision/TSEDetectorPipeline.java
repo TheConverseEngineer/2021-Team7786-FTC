@@ -76,7 +76,7 @@ public class TSEDetectorPipeline extends OpenCvPipeline {
             telemetry.addData("complete", "yay!");
             telemetry.update();
 
-            detectedPosition = TSE_POSITION.UNKNOWN;
+            detectedPosition = TSE_POSITION.LEFT ;
             if (means[0][1].val[0] < 102) { detectedPosition = TSE_POSITION.LEFT; }
             if (means[1][1].val[0] < 102) { detectedPosition = TSE_POSITION.MIDDLE; }
             if (means[2][1].val[0] < 102) { detectedPosition = TSE_POSITION.RIGHT; }

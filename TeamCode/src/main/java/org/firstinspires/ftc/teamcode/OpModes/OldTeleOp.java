@@ -11,8 +11,8 @@ import org.firstinspires.ftc.teamcode.controllers.gamepad.GamepadEx;
 import org.firstinspires.ftc.teamcode.core.ChassisController;
 import org.firstinspires.ftc.teamcode.hardware.Potentiometer;
 
-@TeleOp(name = "Standard Tele-Op", group = "default")
-public class StandardTeleOp extends OpMode {
+@TeleOp(name = "Old Tele-Op", group = "default")
+public class OldTeleOp extends OpMode {
 
     DcMotor shoulder, elbow, duck;
 
@@ -40,9 +40,9 @@ public class StandardTeleOp extends OpMode {
 
         sensor = new Potentiometer(hardwareMap, "shoulderSensor");
 
-        desiredPos = 0;
+        desiredPos = 84;
 
-        gamepad = new GamepadEx(gamepad1);
+        gamepad = new GamepadEx(gamepad2);
 
         gamepad.add("b toggle", gamepad.new BToggleButton() {
             @Override
@@ -57,6 +57,12 @@ public class StandardTeleOp extends OpMode {
                 desiredPos = 56;
             }
         });
+        gamepad.add("x toggle", gamepad.new XToggleButton() {
+            @Override
+            public void onToggle(boolean value) {
+                desiredPos = 12;
+            }
+        });
     }
 
 
@@ -69,7 +75,8 @@ public class StandardTeleOp extends OpMode {
         sensor.update();
 
         telemetry.addData("Sensor pos", sensor.getAngleDegrees());
-        shoulder.setPower(shoulder.setPower(2 / (1 + Math.pow(Math.E, shoulderK * (desiredPos) - sensor.getAngleDegrees()) - 1));
+        telemetry.addData("desired pos", desiredPos);
+        shoulder.setPower(-(2 / (1 + Math.exp(-0.025 * (desiredPos - sensor.getAngleDegrees()))) - 1));
 
         // Move
         controller.drive(-gamepad1.left_stick_x, gamepad1.left_stick_y, -gamepad1.right_stick_x, gamepad1.right_bumper);

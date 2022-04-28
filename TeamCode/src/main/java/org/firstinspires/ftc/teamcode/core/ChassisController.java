@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.core;
 
+import static org.firstinspires.ftc.teamcode.competitionOpModes.COMPETITION_CONSTANTS.DEGREES_TRAVEL_TO_TICKS;
+import static org.firstinspires.ftc.teamcode.competitionOpModes.COMPETITION_CONSTANTS.INCHES_TRAVEL_TO_TICKS;
 import static org.firstinspires.ftc.teamcode.core.CONSTANTS.leftFrontDriveName;
 import static org.firstinspires.ftc.teamcode.core.CONSTANTS.leftRearDriveName;
 import static org.firstinspires.ftc.teamcode.core.CONSTANTS.rightFrontDriveName;
@@ -8,6 +10,7 @@ import static org.firstinspires.ftc.teamcode.core.CONSTANTS.rightRearDriveName;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+
 
 public class ChassisController implements HardwareElement{
     private static final ChassisController instance = new ChassisController();
@@ -53,6 +56,33 @@ public class ChassisController implements HardwareElement{
         rr.setPower(0);
     }
 
+
+    /** Enter speed as inches per second and dist as inches! */
+    public void autoDrive(double speed, double dist) {
+        double target = Math.abs((double)lf.getCurrentPosition()) + dist * INCHES_TRAVEL_TO_TICKS;
+
+        lf.setPower(speed);
+        rf.setPower(speed);
+        lr.setPower(speed);
+        rr.setPower(speed);
+
+        while (Math.abs(lf.getCurrentPosition()) < target) { }
+
+        stop();
+    }
+
+    public void autoTurn(double speed, double angle) {
+        double target = Math.abs((double)lf.getCurrentPosition()) + angle * DEGREES_TRAVEL_TO_TICKS;
+
+        lf.setPower(speed);
+        rf.setPower(-speed);
+        lr.setPower(speed);
+        rr.setPower(-speed);
+
+        while (Math.abs(lf.getCurrentPosition()) < target) { }
+
+        stop();
+    }
 
     /** Only exist for the Hail-Mary opMode to work*/
     public void turn1() {
